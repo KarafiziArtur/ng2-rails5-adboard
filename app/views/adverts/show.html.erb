@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @advert.title %>
+</p>
+
+<p>
+  <strong>Message:</strong>
+  <%= @advert.message %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @advert.user.email %>
+</p>
+
+<p>
+  <strong>Created:</strong>
+  <%= @advert.created_at %>
+</p>
+<% if user_signed_in? && @advert.user == current_user %>
+	<%= link_to 'Edit', edit_advert_path(@advert) %> |
+<% end %>
+<%= link_to 'Back', adverts_path %>

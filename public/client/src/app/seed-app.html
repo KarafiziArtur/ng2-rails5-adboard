@@ -1,0 +1,20 @@
+<nav>
+  <div class="container">
+    <div class="nav-wrapper">
+      <a [routerLink]=" ['/Home'] " class="brand-logo">AdBoard</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <a [routerLink]=" ['/Home'] ">Adverts</a>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <div class="container">
+	  <router-outlet></router-outlet>
+  </div>
+</main>
+
+<footer>
+  <div class="container">© 2016</div>
+</footer>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Adboard</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+
+  </head>
+
+  <body>
+
+		<nav>
+			<div class="container">
+	      <div class="nav-wrapper">
+	        <a href="/" class="brand-logo">AdBoard</a>
+	        <ul id="nav-mobile" class="right hide-on-med-and-down">
+	          <% if user_signed_in? %>
+	            <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
+	          <% else %>
+		          <li><%= link_to "Sign Up", new_user_registration_path %></li>
+		          <li><%= link_to "Sign In", new_user_session_path %></li>
+	          <% end %>
+	        </ul>
+	      </div>
+      </div>
+    </nav>
+
+		<div class="container">
+			<p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+
+      <%= yield %>
+		</div>
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+
+  </body>
+</html>

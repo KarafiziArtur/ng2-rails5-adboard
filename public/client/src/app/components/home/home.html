@@ -1,0 +1,26 @@
+<table class="highlight">
+  <thead>
+    <tr>
+      <th data-field="id">ID</th>
+      <th data-field="title">Title</th>
+      <th data-field="message">Message</th>
+      <th data-field="date">Date</th>
+      <th data-field="author">Author</th>
+      <th data-field="actions"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let advert of adverts">
+      <td>{{ advert.id }}</td>
+      <td>{{ advert.title }}</td>
+      <td>{{ advert.message }}</td>
+      <td>{{ advert.created_at.slice(0,10) }} {{ advert.created_at.slice(11,19) }}</td>
+      <td>{{ advert.user }}</td>
+      <td>
+        <a class="btn-floating blue waves-effect waves-light btn-small"><i class="material-icons">edit</i></a>
+        <a class="btn-floating red waves-effect waves-light btn-small"><i class="material-icons">delete</i></a>
+      </td>
+    </tr>
+  </tbody>
+</table>
