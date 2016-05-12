@@ -13,4 +13,9 @@ export class AdvertsService {
         .map((res) => res.json());
   }
 
+  getAdvert(id: number) {
+    return this.http.get(this.BASE_URL + `adverts/${ id }.json`)
+        .map((res) => res.json());
+  }
+
 }

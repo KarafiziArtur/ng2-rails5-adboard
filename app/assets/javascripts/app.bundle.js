@@ -74,7 +74,7 @@ webpackJsonp([0],{
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
 	var core_1 = __webpack_require__(4);
-	var adverts_1 = __webpack_require__(652);
+	var adverts_1 = __webpack_require__(335);
 	var Home = (function () {
 	    function Home(httpService) {
 	        this.httpService = httpService;
@@ -103,18 +103,58 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 339:
+/***/ 335:
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(4);
+	var http_1 = __webpack_require__(280);
+	__webpack_require__(336);
+	var AdvertsService = (function () {
+	    function AdvertsService(http) {
+	        this.http = http;
+	        this.BASE_URL = 'http://localhost:3000/';
+	    }
+	    AdvertsService.prototype.getAdverts = function () {
+	        return this.http.get(this.BASE_URL + 'adverts.json')
+	            .map(function (res) { return res.json(); });
+	    };
+	    AdvertsService.prototype.getAdvert = function (id) {
+	        return this.http.get(this.BASE_URL + ("adverts/" + id + ".json"))
+	            .map(function (res) { return res.json(); });
+	    };
+	    AdvertsService = __decorate([
+	        core_1.Injectable(), 
+	        __metadata('design:paramtypes', [http_1.Http])
+	    ], AdvertsService);
+	    return AdvertsService;
+	}());
+	exports.AdvertsService = AdvertsService;
+	
+
+/***/ },
+
+/***/ 336:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var Observable_1 = __webpack_require__(38);
-	var map_1 = __webpack_require__(340);
+	var map_1 = __webpack_require__(337);
 	Observable_1.Observable.prototype.map = map_1.map;
 	//# sourceMappingURL=map.js.map
 
 /***/ },
 
-/***/ 340:
+/***/ 337:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -203,42 +243,6 @@ webpackJsonp([0],{
 	    return MapSubscriber;
 	}(Subscriber_1.Subscriber));
 	//# sourceMappingURL=map.js.map
-
-/***/ },
-
-/***/ 652:
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-	    return c > 3 && r && Object.defineProperty(target, key, r), r;
-	};
-	var __metadata = (this && this.__metadata) || function (k, v) {
-	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-	};
-	var core_1 = __webpack_require__(4);
-	var http_1 = __webpack_require__(280);
-	__webpack_require__(339);
-	var AdvertsService = (function () {
-	    function AdvertsService(http) {
-	        this.http = http;
-	        this.BASE_URL = 'http://localhost:3000/';
-	    }
-	    AdvertsService.prototype.getAdverts = function () {
-	        return this.http.get(this.BASE_URL + 'adverts.json')
-	            .map(function (res) { return res.json(); });
-	    };
-	    AdvertsService = __decorate([
-	        core_1.Injectable(), 
-	        __metadata('design:paramtypes', [http_1.Http])
-	    ], AdvertsService);
-	    return AdvertsService;
-	}());
-	exports.AdvertsService = AdvertsService;
-	
 
 /***/ }
 

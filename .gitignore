@@ -5,9 +5,9 @@
 #   git config --global core.excludesfile '~/.gitignore_global'
 
 # Client
-/public/client/node_modules/
-/public/client/npm-debug.log
-/public/client/typings/
+/client/node_modules/
+/client/npm-debug.log
+/client/typings/
 
 
 # Ignore bundler config.
