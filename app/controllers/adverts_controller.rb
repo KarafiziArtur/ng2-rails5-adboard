@@ -1,6 +1,6 @@
 class AdvertsController < ApplicationController
   before_action :set_advert, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index, :show]
+	before_action :authenticate_user!, except: [:index, :show]
 
   # GET /adverts
   # GET /adverts.json
@@ -30,10 +30,10 @@ class AdvertsController < ApplicationController
 
     respond_to do |format|
       if @advert.save
-        format.html { redirect_to @advert, notice: 'Advert was successfully created.' }
+        # format.html { redirect_to @advert, notice: 'Advert was successfully created.' }
         format.json { render :show, status: :created, location: @advert }
       else
-        format.html { render :new }
+        # format.html { render :new }
         format.json { render json: @advert.errors, status: :unprocessable_entity }
       end
     end
@@ -44,10 +44,10 @@ class AdvertsController < ApplicationController
   def update
     respond_to do |format|
       if @advert.update(advert_params)
-        format.html { redirect_to @advert, notice: 'Advert was successfully updated.' }
+        # format.html { redirect_to @advert, notice: 'Advert was successfully updated.' }
         format.json { render :show, status: :ok, location: @advert }
       else
-        format.html { render :edit }
+        # format.html { render :edit }
         format.json { render json: @advert.errors, status: :unprocessable_entity }
       end
     end
@@ -58,7 +58,7 @@ class AdvertsController < ApplicationController
   def destroy
     @advert.destroy
     respond_to do |format|
-      format.html { redirect_to adverts_url, notice: 'Advert was successfully destroyed.' }
+      # format.html { redirect_to adverts_url, notice: 'Advert was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

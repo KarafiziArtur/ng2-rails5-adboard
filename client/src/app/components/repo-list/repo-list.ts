@@ -5,8 +5,8 @@ import {RouteParams, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
 
 @Component({
   selector: 'repo-list',
-  templateUrl: 'client/src/app/components/repo-list/repo-list.html',
-  styleUrls: ['client/src/app/components/repo-list/repo-list.css'],
+  templateUrl: '/app/components/repo-list/repo-list.html',
+  styleUrls: ['/app/components/repo-list/repo-list.css'],
   providers: [],
   directives: [ ROUTER_DIRECTIVES ],
   pipes: []

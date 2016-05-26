@@ -1,0 +1,19 @@
+<form id="advert__edit__form" (ngSubmit)="addAdvert()">
+  <div class="modal-content">
+    <div class="input-field col s12">
+      <input id="advert_title" type="text" class="validate" required
+             [ngModel]="advert.title" (ngModelChange)="advert.title = $event">
+      <label for="advert_title">Title</label>
+    </div>
+    <h3>{{ advert.user }}</h3>
+    <div class="input-field col s12">
+        <textarea id="textarea1" class="materialize-textarea" required
+                  [ngModel]="advert.message" (ngModelChange)="advert.message = $event"></textarea>
+      <label for="textarea1">Message</label>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button class="waves-effect waves-light btn" type="submit">Add</button>
+    <a class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+  </div>
+</form>

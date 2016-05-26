@@ -11,7 +11,7 @@ var webpackConfig = {
   },
 
   output: {
-    path: '../../app/assets/javascripts',
+    path: '../app/assets/javascripts',
   },
 
   plugins: [
@@ -102,7 +102,7 @@ var defaultConfig = {
     clearImmediate: 0,
     setImmediate: 0
   },
-}
+};
 
 var webpackMerge = require('webpack-merge');
 module.exports = webpackMerge(defaultConfig, webpackConfig);
