@@ -17,7 +17,7 @@ import { UserService } from './services/user';
   { path: '/', component: Home, name: 'Home', useAsDefault: true },
 ])
 export class SeedApp {
-  constructor(private userService: UserService, location: Location) {}
+  constructor(private userService: UserService) {}
 
   userInfo: any;
 
@@ -42,7 +42,6 @@ export class SeedApp {
             () => {
               console.log("Complete Sign Out!");
               this.userInfo = null;
-              location.reload(true);
             }
         );
   }

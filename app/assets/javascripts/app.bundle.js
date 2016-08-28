@@ -40,7 +40,7 @@ webpackJsonp([0],{
 	var home_1 = __webpack_require__(334);
 	var user_1 = __webpack_require__(342);
 	var SeedApp = (function () {
-	    function SeedApp(userService, location) {
+	    function SeedApp(userService) {
 	        this.userService = userService;
 	    }
 	    SeedApp.prototype.getUserInfo = function () {
@@ -57,7 +57,6 @@ webpackJsonp([0],{
 	            .subscribe(function (data) { return data; }, function (error) { return console.log("Error Sign Out", error); }, function () {
 	            console.log("Complete Sign Out!");
 	            _this.userInfo = null;
-	            location.reload(true);
 	        });
 	    };
 	    SeedApp = __decorate([
@@ -71,7 +70,7 @@ webpackJsonp([0],{
 	        router_deprecated_1.RouteConfig([
 	            { path: '/', component: home_1.Home, name: 'Home', useAsDefault: true },
 	        ]), 
-	        __metadata('design:paramtypes', [user_1.UserService, common_1.Location])
+	        __metadata('design:paramtypes', [user_1.UserService])
 	    ], SeedApp);
 	    return SeedApp;
 	}());
